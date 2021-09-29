@@ -1,0 +1,57 @@
+<div class="card mt-5">
+    <div class="card-body text-center">
+        <h5 class="titulo mb-4">{{titulo | uppercase}}</h5>
+        <form [formGroup]="form" (ngSubmit)="guardarTarjeta()">
+            
+            <div class="input-group input-group-lg mb-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <i class="fas fa-user" 
+                    [class.green-icon]="this.form.get('titular')?.valid"
+                    [class.red-icon]="this.form.get('titular')?.invalid && this.form.get('titular')?.touched"
+                    ></i>
+                  </div>
+                </div>
+                <!-- puede ser nulo por eso el signo de pregunta para seguir llamando a la propiedad valid -->
+                <input type="text" formControlName="titular"   class="form-control" id="inlineFormInputGroup" placeholder="Username">
+              </div>
+              <div class="input-group input-group-lg mb-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <i class="fas fa-id-card"
+                     [class.green-icon]="this.form.get('numeroTarjeta')?.valid"
+                     [class.red-icon]="this.form.get('numeroTarjeta')?.invalid && this.form.get('numeroTarjeta')?.touched"></i>
+                  </div>
+                </div>
+                <input type="text" formControlName="numeroTarjeta"  maxlength="16" class="form-control" id="inlineFormInputGroup" placeholder="Numero Tarjeta">
+              </div>
+              <div class="form-row align-items-center">
+                  <div class="col-6">
+                    <div class="input-group input-group-lg mb-2">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
+                            <i class="fas fa-calendar-alt" 
+                            [class.green-icon]="this.form.get('fechaExpiracion')?.valid" 
+                            [class.red-icon]="this.form.get('fechaExpiracion')?.invalid && this.form.get('fechaExpiracion')?.touched"></i>
+                          </div>
+                        </div>
+                        <input type="text" formControlName="fechaExpiracion" maxlength="5" class="form-control" id="inlineFormInputGroup" placeholder="MM/YY">
+                      </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="input-group input-group-lg mb-2">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
+                            <i class="fas fa-key green-icon" 
+                            [class.green-icon]="this.form.get('cvv')?.valid"
+                            [class.red-icon]="this.form.get('cvv')?.invalid && this.form.get('cvv')?.touched"></i>
+                          </div>
+                        </div>
+                        <input type="password" formControlName="cvv" maxlength="3" class="form-control" id="inlineFormInputGroup" placeholder="CVV">
+                      </div>
+                  </div>           
+                    <button [disabled]="form.invalid" type="submit" class="btn  btn-block btn-lg btn-success"><i class="fas fa-database"></i>{{textButton}}</button>
+              </div>
+        </form>
+    </div>
+</div>

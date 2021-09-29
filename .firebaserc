@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "omega-scope-283806": {
+      "hosting": {
+        "my-app": [
+          "omega-scope-283806"
+        ]
+      }
+    }
+  }
+}

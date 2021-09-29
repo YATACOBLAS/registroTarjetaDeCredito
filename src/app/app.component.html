@@ -1,0 +1,99 @@
+<!-- <div class="container bg-primary">
+    <h3>Hola  {{nombre}}-{{apellido}} con edad : {{edad}}</h3>
+    <div>
+        <button class="btn btn-success" (click) ="changeValues('Juan','Blas',23)">Cambiar</button>
+    </div>
+    <input type="text" placeholder="Escribe algo aqui" [(ngModel)]="modelito">
+    Aqui esta:{{modelito}}
+    <div class="container">
+        <div >
+            <input type="text" class="form-control" placeholder="Ingrese el Nombre" [(ngModel)]="miniData.nombre">
+            <input type="text" class="form-control" placeholder="Ingrese el Apellido" [(ngModel)]="miniData.apellido">
+            <input type="number" class="form-control" placeholder="Ingrese la Edad" [(ngModel)]="miniData.edad">
+            <input type="file" class="form-control" placeholder="Ingrese el Archivo" [(ngModel)]="miniData.file">
+             <button  (click)="addData()" class="btn btn-success" >Enviar</button>
+        </div>
+        <table class="table">
+            <thead>
+                <th>*</th>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Edad</th>
+                <th>Archivo</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let d of Data; let i=index" [ngSwitch]="d.nombre">
+                    <td>{{i}}</td>
+                    <td>{{d.nombre}}</td>
+                    <td>{{d.apellido}}</td>
+                    <td><span *ngSwitchCase="'Juan'" class="badge badge-danger">{{d.edad}}</span>
+                        <span *ngSwitchCase="'Julian'" class="badge badge-secondary">{{d.edad}}</span>
+                        <span *ngSwitchCase="'Robert'" class="badge badge-primary">{{d.edad}}</span>
+                    </td>
+                    <td><button class="btn btn-primary">Ver PDF</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+<h3 class="text-center m-3">PIANO</h3>
+<div class="container  lista d-flex justify-content-center">
+    <ul class="list-group col-5 ">
+        <li class="list-group-item "  (click)="emitSound(1)"  style="background-color:red;"></li>
+        <li class="list-group-item "  (click)="emitSound(2)"  style="background-color:green;"></li>
+        <li class="list-group-item "  (click)="emitSound(3)"  style="background-color:brown;"></li>
+        <li class="list-group-item "  (click)="emitSound(4)"  style="background-color:greenyellow;"></li>
+        <li class="list-group-item "  (click)="emitSound(5)"  style="background-color:blue;"></li>
+        <li class="list-group-item "  (click)="emitSound(6)"  style="background-color:purple;"> </li>
+        <li class="list-group-item "  (click)="emitSound(7)"  style="background-color:peru;"></li>
+
+      </ul>
+</div>
+<h3 class="text-center m-3">JUEGO DE DADOS</h3>
+<div class="container  ">
+    
+    
+    <div class="text-center">
+        <button class="btn btn-success" (click)="Igualar()">Lanzar</button>
+    </div>
+    <div  *ngIf="igual" class="alert alert-primary" role="alert">
+        <h3 class="text-center ">
+            GANASTE!!
+        </h3>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <img [src]="ruta1" style="width: 200px;background-color:red;border-radius: 10px;" alt="">
+        <img [src]="ruta2" style="width: 200px; background-color:red;border-radius: 10px;" alt="">
+    </div>
+   
+    
+</div>
+
+    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [mapTypeId]="mapTypeId">
+        <agm-marker *ngIf="located" [longitude]="lng" [latitude]="lat" title="Pobre"></agm-marker>
+    </agm-map>
+    
+    <button (click)="getCurrentPosition()">UBICACION ACTUAL</button>
+
+     -->
+<div class="container mt-5">
+        <div class="row">
+            <div class="col-md-8 offset-lg-2">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h2 class="titulo">TARJETA DE CREDITO</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <app-crear-tarjetas></app-crear-tarjetas>
+            </div>
+            <div class="col-md-6">
+                <app-listar-tarjeta></app-listar-tarjeta>
+            </div>
+        </div>
+    
+</div>
